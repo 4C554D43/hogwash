@@ -438,6 +438,7 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   }
 
   # Return output --------------------------------------------------------------
+  cat("end build_better_reconstruction")
   return(best_reconstruction)
 }
 
