@@ -357,17 +357,12 @@ discrete_get_recon_confidence <- function(recon, tr, ML_cutoff){
 build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # Check input ----------------------------------------------------------------
   check_tree_is_valid(tr)
-  cat("build_better_reconstruction.check_tree_is_valid() PASSED.")
   check_if_binary_matrix(mat)
-  cat("build_better_reconstruction.check_if_binary_matrix() PASSED.")
   check_is_string(disc_cont)
-  cat("build_better_reconstruction.check_is_string() PASSED.")
   check_is_number(num)
-  cat("build_better_reconstruction.check_is_number() PASSED.")
   check_is_string(recon_method)
-  cat("build_better_reconstruction.check_is_string() PASSED.")
   check_anc_rec_compatible(recon_method)
-  cat("build_better_reconstruction.check_anc_rec_compatible() PASSED.")
+  cat("build_better_reconstruction() checks PASSED.")
   if (disc_cont != "discrete") {
     stop("Only pick recon model for discrete. Continuous must use BM.")
   }
@@ -399,7 +394,7 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
                                         method = recon_method,
                                         marginal = FALSE,
                                         model = "ER"))
-
+  cat("build_better_reconstruction.ERreconstruction() PASSED.")
   # Some ARD models don't work well with the data and given a warning message
   # like:  "In sqrt(diag(solve(h))) : NaNs produced".  To ensure the ER model is
   # preferred in this case use the following warning catching:
@@ -415,6 +410,7 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
     error_msg
     }
   )
+    cat("build_better_reconstruction.ARDreconstruction) PASSED.")
   # If ARD gave a warning, pick ER
   best_model <- "ER"
   if (length(ARDreconstruction) == 1) {
