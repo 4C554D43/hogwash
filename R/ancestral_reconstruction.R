@@ -388,12 +388,12 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # http://blog.phytools.org/2017/07/comparing-fitted-discrete-character.html
   # Test ER vs ARD
   set.seed(1)
-  ERreconstruction  <- suppressWarnings(ape::ace(mat[, num, drop = TRUE],
+  ERreconstruction  <- ape::ace(mat[, num, drop = TRUE],
                                         tr,
                                         type = disc_cont,
                                         method = recon_method,
                                         marginal = FALSE,
-                                        model = "ER"))
+                                        model = "ER") #remove suppresswarnings
   cat("build_better_reconstruction.ERreconstruction() PASSED.")
   # Some ARD models don't work well with the data and given a warning message
   # like:  "In sqrt(diag(solve(h))) : NaNs produced".  To ensure the ER model is
