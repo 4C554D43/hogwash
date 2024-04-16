@@ -352,11 +352,17 @@ discrete_get_recon_confidence <- function(recon, tr, ML_cutoff){
 build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # Check input ----------------------------------------------------------------
   check_tree_is_valid(tr)
+  cat("build_better_reconstruction.check_tree_is_valid() PASSED.")
   check_if_binary_matrix(mat)
+  at("build_better_reconstruction.check_if_binary_matrix() PASSED.")
   check_is_string(disc_cont)
+  at("build_better_reconstruction.check_is_string() PASSED.")
   check_is_number(num)
+  at("build_better_reconstruction.check_is_number() PASSED.")
   check_is_string(recon_method)
+  at("build_better_reconstruction.check_is_string() PASSED.")
   check_anc_rec_compatible(recon_method)
+  at("build_better_reconstruction.check_anc_rec_compatible() PASSED.")
   if (disc_cont != "discrete") {
     stop("Only pick recon model for discrete. Continuous must use BM.")
   }
