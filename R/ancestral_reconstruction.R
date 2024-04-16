@@ -374,7 +374,7 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
                    min_rows = ape::Ntip(tr),
                    exact_cols = NULL,
                    min_cols = 1)
-
+  cat("build_better_reconstruction.check_dimensions() PASSED.")
   # Function -------------------------------------------------------------------
   # Note, SYMreconstruction removed because SYM == ER for binary inputs.
   # Use this function to choose the best model for reconstruction.
