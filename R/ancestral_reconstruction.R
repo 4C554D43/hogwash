@@ -267,7 +267,12 @@ discrete_ancestral_reconstruction <- function(tr,
   set.seed(1)
   reconstruction <-
     build_better_reconstruction(mat, tr, disc_cont, num, recon_method)
-
+   cat("build_better_reconstruction() PASSED.")
+  str(mat)
+  str(tr)
+  str(disc_cont)
+  str(num)
+  str(recon_method)
   # Extract the mostly likely character state using which.max
   ML_anc_rec <-
     as.numeric(colnames(reconstruction$lik.anc)[apply(reconstruction$lik.anc,
