@@ -388,7 +388,10 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # Test ER vs ARD
   set.seed(1)
   cat("CODE FAILS HERE\n")
-  cat(tr)
+if (is.null(tr$node.label)) {
+  cat("fix treelabel att")
+    phy$node.label <- paste0("Node_", 1:tr$Nnode)  # Example: auto-generate labels
+}
 
   
   ERreconstruction  <- ape::ace(mat[, num, drop = TRUE],
