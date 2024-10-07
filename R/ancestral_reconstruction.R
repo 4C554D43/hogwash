@@ -388,6 +388,7 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # http://blog.phytools.org/2017/07/comparing-fitted-discrete-character.html
   # Test ER vs ARD
   set.seed(1)
+  cat("CODE FAILS HERE\n")
   ERreconstruction  <- ape::ace(mat[, num, drop = TRUE],
                                         tr,
                                         type = disc_cont,
