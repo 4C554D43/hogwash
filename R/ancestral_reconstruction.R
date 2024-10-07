@@ -151,7 +151,7 @@ continuous_ancestral_reconstruction <- function(tr,
 #'   dummy confidence vector. Ancestral reconstruction for continuous values
 #'   only gives back a 95% CI. We can't use any of this information to decide
 #'   which nodes are low confidence so treat all reconstructed values as high
-#'   confidence, which is stored as a value 1.
+#'   confidence, which is stored as a value 1.fv
 #'
 #' @param recon_vector Numeric vector. Values of the reconstruction. Length ==
 #'   Ntip(tr) + Nnode(tr).
@@ -374,11 +374,11 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
                    min_rows = ape::Ntip(tr),
                    exact_cols = NULL,
                    min_cols = 1)
-  cat("build_better_reconstruction.check_dimensions() PASSED.")
+  cat("build_better_reconstruction.check_dimensions() PASSEDTEST.")
   # Function -------------------------------------------------------------------
   # Note, SYMreconstruction removed because SYM == ER for binary inputs.
   # Use this function to choose the best model for reconstruction.
-cat("CODE FAILS HERE\n")
+  cat("CODE FAILS HERE\n")
   # Cutoffs for comparing the ER and ARD:
   alpha <- 0.05 # For likelihood test
   significant_difference_in_AIC <- 10
