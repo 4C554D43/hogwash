@@ -374,11 +374,10 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
                    min_rows = ape::Ntip(tr),
                    exact_cols = NULL,
                    min_cols = 1)
-  cat("build_better_reconstruction.check_dimensions() PASSEDTEST.")
+  cat("build_better_reconstruction.check_dimensions() PASSED.")
   # Function -------------------------------------------------------------------
   # Note, SYMreconstruction removed because SYM == ER for binary inputs.
   # Use this function to choose the best model for reconstruction.
-  cat("CODE FAILS HERE\n")
   # Cutoffs for comparing the ER and ARD:
   alpha <- 0.05 # For likelihood test
   significant_difference_in_AIC <- 10
@@ -389,6 +388,9 @@ build_better_reconstruction <- function(mat, tr, disc_cont, num, recon_method){
   # Test ER vs ARD
   set.seed(1)
   cat("CODE FAILS HERE\n")
+  cat(tr)
+
+  
   ERreconstruction  <- ape::ace(mat[, num, drop = TRUE],
                                         tr,
                                         type = disc_cont,
