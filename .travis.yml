@@ -16,7 +16,7 @@ addons:
 
 r_packages:
   - covr
-  #- ape fix update error
+  - ape
   - graphics
   - grDevices
   - pheatmap
