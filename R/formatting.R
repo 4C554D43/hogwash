@@ -27,7 +27,7 @@ format_tree <- function(tr){
   # Function -------------------------------------------------------------------
   
   cat("debug 1 ->",  1:ape::Nnode(tr))
-  ape::Nnode(tr) <- 29
+  1:ape::Nnode(tr) <- 28
   cat("debug 1.1 ->",  1:ape::Nnode(tr))
   
   for (i in 1:ape::Nnode(tr)) {
