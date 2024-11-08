@@ -34,7 +34,7 @@ format_tree <- function(tr){
   
   
   for (i in 1:ape::Nnode(tr)) {
-    tr$node.label[i] == "100"
+    tr$node.label[i] <- "100"
     #fix
   cat("debug: ", i)
     
