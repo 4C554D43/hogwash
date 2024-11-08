@@ -25,19 +25,15 @@ format_tree <- function(tr){
   tr <- ape::reorder.phylo(tr, order = "cladewise")
 
   # Function -------------------------------------------------------------------
-  
-  cat("debug 1 ->",  1:ape::Nnode(tr))
-  #tr$Nnode <- 28 
-  #?????
-  cat("debug 1.1 ->",  1:ape::Nnode(tr))
-  cat("length(tr$node.label)",  length(tr$node.label))
+
+
+  # Fix 2024-11-08 fix bug in Nnode being higher than expected, causing NULL error below 
+  #cat("debug 1.1 ->",  1:ape::Nnode(tr))
+  #cat("length(tr$node.label)",  length(tr$node.label))
   
   
   for (i in 1:ape::Nnode(tr)) {
-    tr$node.label[i] <- "100"
-    #fix
-  cat("debug: ", i)
-    
+    tr$node.label[i] <- "100" #actual fix
     if (tr$node.label[i] == "") {
       tr$node.label[i] <- 0
     } else if (tr$node.label[i] == "Root") {
