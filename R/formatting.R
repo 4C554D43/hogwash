@@ -27,13 +27,15 @@ format_tree <- function(tr){
   # Function -------------------------------------------------------------------
   
   cat("debug 1 ->",  1:ape::Nnode(tr))
-  tr$Nnode <- 28 
+  #tr$Nnode <- 28 
   #?????
   cat("debug 1.1 ->",  1:ape::Nnode(tr))
   cat("length(tr$node.label)",  length(tr$node.label))
   
   
   for (i in 1:ape::Nnode(tr)) {
+    tr$node.label[i] == "100"
+    #fix
   cat("debug: ", i)
     
     if (tr$node.label[i] == "") {
