@@ -25,14 +25,19 @@ format_tree <- function(tr){
   tr <- ape::reorder.phylo(tr, order = "cladewise")
 
   # Function -------------------------------------------------------------------
-  #for (i in 1:ape::Nnode(tr)) {
-  #  if (tr$node.label[i] == "") {
-  #    tr$node.label[i] <- 0
-  #  } else if (tr$node.label[i] == "Root") {
-  #    tr$node.label[i] <- 0
-   # }
-  #}
-  #tr$node.label <- as.numeric(tr$node.label)
+  
+  cat("debug 1")
+  for (i in 1:ape::Nnode(tr)) {
+  cat("debug: ", i)
+    
+    if (tr$node.label[i] == "") {
+      tr$node.label[i] <- 0
+    } else if (tr$node.label[i] == "Root") {
+      tr$node.label[i] <- 0
+    }
+  }
+    cat("debug 2")
+  tr$node.label <- as.numeric(tr$node.label)
 
   # Check and return output ----------------------------------------------------
   check_for_root_and_bootstrap(tr)
